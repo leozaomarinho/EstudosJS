@@ -1,4 +1,4 @@
-
+/*
 let nomes =['raquel','be','leo']
 
 for(let i= 0; i<=nomes.length;i++){
@@ -30,3 +30,17 @@ let PessoaRemovida2 = pessoas.pop(2);
 
 console.log(PessoaRemovida2);
 
+console.log(pessoas)
+*/
+
+let pessoas =['leo', 'nasus','thays','raquel'];
+
+let removidaInicio = pessoas.shift();
+
+console.log(removidaInicio)
+
+console.log(pessoas);
+
+pessoas.unshift('leo novamente');
+
+console.log(pessoas)
