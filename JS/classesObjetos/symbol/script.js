@@ -15,6 +15,7 @@ Cachorro.prototype.raca= 'SRD';
 //criando symbol
 let patas = Symbol();
 
+//atribuindo o valor a variavel do prototype
 Cachorro.prototype[patas] =4;
 
 ///criando objeto

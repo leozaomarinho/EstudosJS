@@ -17,9 +17,12 @@ class Pessoa {
     }
 }
 
-    let pessoa = new Pessoa('leonardo marinho',24,1800)
+    let pessoa = new Pessoa('leonardo marinho',24,6000)
+    Pessoa.prototype.familia = true;
 
     console.log(pessoa);
-    console.log(pessoa.verificaRenda());
+    pessoa.verificaRenda();
+
+    console.log(Object.isPrototypeOf(Pessoa));
 
 
