@@ -1,15 +1,13 @@
-function carroEsportivo(marca,modelo,cor){
-    let carro = Object.create({
-        rodas:4,
-        portas:2
-    });
+class Onibus{
+    constructor(marca,portas,cor){
+        this.marca = marca;
+        this.portas = portas;
+        this.cor = cor;
+    }
 
-    carro.marca = marca;
-    carro.cor = modelo;
-    carro.modelo = cor;
-
-    return carro;
 }
 
-console.log(carroEsportivo('ferrari','vermelha','488 pista'));
-//console.log(Object.prototype(carroEsportivo()))
+let mercedez = new Onibus('Mercedez',2,'vermelho');
+
+console.log(mercedez);
+console.log(typeof(mercedez));
