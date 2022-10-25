@@ -58,17 +58,19 @@ class ContaBancaria{
     }
 
    
-    let conta2 = new ContaEspecial(350,80,4)
+    let conta2 = new ContaEspecial(350,80,8)
 
-    let conta = new ContaBancaria(400,100,2)
+    let conta = new ContaBancaria(400,100,3)
 
     console.log(conta);
     console.log(conta2)
 
-    console.log(Object.getPrototypeOf(conta2))
 
-    conta.transferir(100,'ContaCP','ContaCC')
+    conta.transferir(80,'ContaCP','ContaCC')
 
-    console.log(conta.saldoCC)
-    console.log(conta.saldoCP)
+    console.log(conta.saldoCC);
+    console.log(conta.saldoCP);
     
+    conta2.depositoCC = 80;
+
+    conta.depositoCP = 30;
