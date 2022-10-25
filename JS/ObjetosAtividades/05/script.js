@@ -5,6 +5,7 @@ class ContaBancaria{
         this.jurosCP = jurosCP;
     }
 
+////////////////////Metodo de deposito/////////////////////////////////////////////////////////////////////////////////////
 
     set depositoCC(valor){
         this.saldoCC+=valor;
@@ -18,6 +19,32 @@ class ContaBancaria{
         console.log(`você realizou um deposito no valor de R$${valor} reais.`);
         console.log(`Seu saldo atual na conta poupança é de R$${this.saldoCP}`);
     }
+
+//////////////////////Metodo de saque/////////////////////////////////////////////////////////////////////////////////////
+
+    set saqueCC(valor){
+
+        if(valor<=this.saldoCC){
+        this.saldoCC-=valor;
+        console.log(`você realizou um Saque no valor de R$${valor} reais.`);
+        console.log(`Seu saldo atual na conta corrente é de R$${this.saldoCC}`)
+        }
+        else{
+            console.log('O valor de saque deve ser um valor valido, e condizente com o dinheiro disponivel na conta!')
+        }
+    };
+
+    set saqueCP(valor){
+
+        if(valor<=this.saldoCP){
+        this.saldoCP-=valor;
+        console.log(`você realizou um Saque no valor de R$${valor} reais.`);
+        console.log(`Seu saldo atual na conta corrente é de R$${this.saldoCC}`)
+        }
+        else{
+            console.log('O valor de saque deve ser um valor valido, e condizente com o dinheiro disponivel na conta!')
+        }
+    };
 
      transferir(valor,contaEnvio,contaReceb){
 
@@ -62,10 +89,12 @@ class ContaBancaria{
 
     let conta = new ContaBancaria(400,100,3)
 
+   
     console.log(conta);
+
     console.log(conta2)
 
-
+/*
     conta.transferir(80,'ContaCP','ContaCC')
 
     console.log(conta.saldoCC);
@@ -74,3 +103,14 @@ class ContaBancaria{
     conta2.depositoCC = 80;
 
     conta.depositoCP = 30;
+*/
+
+//conta.depositoCC = 300;
+
+//console.log(conta)
+
+//conta.transferir(100,'ContaCC','ContaCP')
+
+console.log(conta)
+
+conta.saqueCC= 200;
