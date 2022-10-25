@@ -21,11 +21,11 @@ class ContaBancaria{
 
      transferir(valor,contaEnvio,contaReceb){
 
-    if(contaEnvio === 'ContaPP' && contaReceb === 'ContaCC'){    
+    if(contaEnvio === 'ContaCP' && contaReceb === 'ContaCC'){    
 //transf de Conta Poupança para conta Corrente
-        if(valor<=saldoCP){
+        if(valor<=this.saldoCP){
         this.saldoCC+=this.saldoCP;
-        saldoCP -=valor;
+        this.saldoCP-=valor;
         console.log('Transfêrencia realizada com sucesso!')
         console.log(`O seu novo saldo total na conta corrente é de R$${this.saldoCC}`);
         }
@@ -34,7 +34,7 @@ class ContaBancaria{
         }
     }
 
-    else if(contaEnvio === 'ContaCC' && contaReceb === 'ContaPP'){
+    else if(contaEnvio === 'ContaCC' && contaReceb === 'ContaCP'){
 //transf de conta corrente para conta poupança
         if(valor<=this.saldoCC){
             this.saldoCP+=this.saldoCC;
@@ -53,11 +53,11 @@ class ContaBancaria{
 
     }
 
-
     class ContaEspecial extends ContaBancaria{
 
     }
 
+   
     let conta2 = new ContaEspecial(350,80,4)
 
     let conta = new ContaBancaria(400,100,2)
@@ -65,5 +65,10 @@ class ContaBancaria{
     console.log(conta);
     console.log(conta2)
 
-    console.log(Object.prototype(conta2))
+    console.log(Object.getPrototypeOf(conta2))
+
+    conta.transferir(100,'ContaCP','ContaCC')
+
+    console.log(conta.saldoCC)
+    console.log(conta.saldoCP)
     
