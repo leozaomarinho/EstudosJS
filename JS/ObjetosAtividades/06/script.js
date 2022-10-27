@@ -18,8 +18,10 @@ class ContaUser{
     }
 
     trocarSenha(novaSenha){
-        (this.logado === true){
-        this.password = novaSenha;
+        let log = this.logado;
+        if(this.log === true){
+        this.senha = novaSenha;
+        console.log('Troca de senha efetuada com sucesso!')
     }
     }
 }
@@ -29,3 +31,7 @@ let conta = new ContaUser('leozao','leoteste','leozao@gmail.com');
 console.log(conta);
 
 conta.efetuarLogin('leozao','leoteste');
+
+conta.trocarSenha('leoteste2')
+
+console.log(conta.senha)
